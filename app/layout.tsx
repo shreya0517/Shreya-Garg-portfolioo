@@ -3,22 +3,20 @@ import type { ReactNode } from "react";
 // @ts-ignore Next.js processes global CSS imports.
 import "./globals.css";
 
+
 export const metadata: Metadata = {
-  title: "Shreya Garg — Full-Stack Developer",
+  title: "Shreya Garg | Developer Portfolio",
   description:
-    "Portfolio of Shreya Garg: full-stack development, projects, skills, experience, and ways to connect.",
-  openGraph: {
-    title: "Shreya Garg — Full-Stack Developer",
-    description: "Turning ideas into meaningful web experiences.",
-    type: "website",
-  },
+    "A personal developer portfolio showcasing my technical skills, projects, and experience in software development.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: ReactNode }>) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="dark">
       <body>{children}</body>
     </html>
   );

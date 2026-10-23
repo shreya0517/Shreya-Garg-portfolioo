@@ -2,6 +2,7 @@
 
 import { FormEvent, useEffect, useState } from "react";
 import TechIcon from "./TechIcon";
+import ThemeToggle from "./ThemeToggle";
 
 const nav = [
   ["home", "Home"],
@@ -111,7 +112,6 @@ function Stars() {
 }
 
 export default function Portfolio() {
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
   const [active, setActive] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -144,7 +144,7 @@ export default function Portfolio() {
   }
 
   return (
-    <main className={`portfolio theme-${theme}`}>
+    <main className="portfolio theme-dark">
       <Stars />
       <header className="topbar">
         <a className="brand" href="#home" onClick={() => setMenuOpen(false)}>
@@ -175,14 +175,7 @@ export default function Portfolio() {
           ))}
         </nav>
         <div className="top-actions">
-          <button
-            className="theme-switch"
-            onClick={() => setTheme((t) => (t === "dark" ? "light" : "dark"))}
-            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
-          >
-            <span className={theme === "light" ? "chosen" : ""}>☼</span>
-            <span className={theme === "dark" ? "chosen" : ""}>☾</span>
-          </button>
+          <ThemeToggle />
           <a className="resume-button" href="#contact">
             Let’s talk <Arrow diagonal />
           </a>
